@@ -1,0 +1,10 @@
+# Model config
+
+detection:
+  model_type: "yolov8"
+  model_name: "yolov8n.pt"  # nano model, cpu için
+  confidence_threshold: 0.5
+  iou_threshold: 0.45
+  device: "cpu"
+  classes: [0]  # sadece insan sınıfı
+  imgsz: 640

@@ -1,0 +1,14 @@
+# ByteTrack
+
+tracker:
+  type: "bytetrack"
+  
+  track_thresh: 0.5
+  track_buffer: 30
+  match_thresh: 0.8
+  
+  low_thresh: 0.1
+  
+  min_box_area: 100
+  
+  with_reid: false

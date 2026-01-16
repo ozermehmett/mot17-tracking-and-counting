@@ -1,0 +1,11 @@
+#MOT17 sequences
+
+sequences:
+  MOT17-09:
+    name: "MOT17-09-SDP"
+    fps: 30
+    resolution: [1080, 1920]  # hxw
+    description: "Orta kalabalik alisveris caddesi, sabit kamera"
+    enabled: true
+  
+  # MOT17-02:

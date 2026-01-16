@@ -1,0 +1,15 @@
+# giriş/çıkış çizgileri config
+
+MOT17-09:
+  line_1:
+    name: "Ana Giriş"
+    # çizgi koordinatları [x1, y1, x2, y2]
+    coordinates: [400, 500, 1500, 500]
+    direction:
+      entry: "down"  # yukarıdan aşağı geçiş = giriş
+      exit: "up"     # aşağıdan yukarı geçiş = çıkış
+    color: [0, 255, 0]  # BGR
+    thickness: 3
+    enabled: true
+
+# MOT17-02:
