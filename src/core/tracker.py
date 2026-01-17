@@ -148,14 +148,20 @@ class ByteTracker:
         # İkinci eşleştirme: düşük confidence
         if len(unmatched_tracks) > 0 and len(low_dets) > 0:
             remaining_tracks = [self.tracks[i] for i in unmatched_tracks]
-            matches_low, unmatched_tracks_low, _ = self._match(
+            matches_low, _, _ = self._match(
                 remaining_tracks, low_dets
             )
             
+            # matches_low daki indeksler remaining_tracks için
+            matched_unmatched_indices = []
             for i, det_idx in matches_low:
                 track_idx = unmatched_tracks[i]
                 det = low_dets[det_idx]
                 self.tracks[track_idx].update(det[:4], det[4])
+                matched_unmatched_indices.append(track_idx)
+            
+            # Eşleşenleri unmatched_tracks'ten çıkar
+            for track_idx in matched_unmatched_indices:
                 unmatched_tracks.remove(track_idx)
         
         # Eşleşmeyen trackleri lost olarak işaretle

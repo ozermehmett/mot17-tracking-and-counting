@@ -3,7 +3,7 @@
 detection:
   model_type: "yolov8"
   model_name: "yolov8n.pt"  # nano model, cpu için
-  confidence_threshold: 0.5
+  confidence_threshold: 0.35  # occlusion için biraz daha düşük
   iou_threshold: 0.45
   device: "cpu"
   classes: [0]  # sadece insan sınıfı
