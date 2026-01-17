@@ -1,29 +1,7 @@
 import yaml
 from pathlib import Path
 
-
-def line_intersection(p1, p2, line_start, line_end):
-    """İki nokta arasındaki çizgi, sanal çizgiyi kesiyor mu"""
-    x1, y1 = p1
-    x2, y2 = p2
-    x3, y3 = line_start
-    x4, y4 = line_end
-    
-    denom = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4)
-    if abs(denom) < 1e-10:
-        return False
-    
-    t = ((x1 - x3) * (y3 - y4) - (y1 - y3) * (x3 - x4)) / denom
-    u = -((x1 - x2) * (y1 - y3) - (y1 - y2) * (x1 - x3)) / denom
-    
-    return 0 <= t <= 1 and 0 <= u <= 1
-
-
-def get_bbox_bottom_center(bbox):
-    """Bboxın alt ortasını döndür (ayak noktası)"""
-    x1, y1, x2, y2 = bbox[:4]
-    cx = (x1 + x2) / 2
-    return (cx, y2)
+from src.utils.geometry import line_intersection, get_bbox_bottom_center
 
 
 class LineCounter:

@@ -3,20 +3,7 @@ import yaml
 from pathlib import Path
 from scipy.optimize import linear_sum_assignment
 
-
-def iou(box1, box2):
-    """IoU hesapla"""
-    x1 = max(box1[0], box2[0])
-    y1 = max(box1[1], box2[1])
-    x2 = min(box1[2], box2[2])
-    y2 = min(box1[3], box2[3])
-    
-    inter = max(0, x2 - x1) * max(0, y2 - y1)
-    area1 = (box1[2] - box1[0]) * (box1[3] - box1[1])
-    area2 = (box2[2] - box2[0]) * (box2[3] - box2[1])
-    union = area1 + area2 - inter
-    
-    return inter / union if union > 0 else 0
+from src.utils.geometry import calculate_iou
 
 
 class KalmanFilter:
@@ -198,7 +185,7 @@ class ByteTracker:
         cost_matrix = np.zeros((len(tracks), len(detections)))
         for i, track in enumerate(tracks):
             for j, det in enumerate(detections):
-                cost_matrix[i, j] = 1 - iou(track.box[:4], det[:4])
+                cost_matrix[i, j] = 1 - calculate_iou(track.box[:4], det[:4])
         
         # Hungarian
         row_ind, col_ind = linear_sum_assignment(cost_matrix)
