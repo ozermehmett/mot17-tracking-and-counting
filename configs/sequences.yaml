@@ -5,7 +5,19 @@ sequences:
     name: "MOT17-09-SDP"
     fps: 30
     resolution: [1080, 1920]  # hxw
-    description: "Orta kalabalik alisveris caddesi, sabit kamera"
+    description: "AVM, sabit kamera"
     enabled: true
   
-  # MOT17-02:
+  MOT17-02:
+    name: "MOT17-02-SDP"
+    fps: 30
+    resolution: [1080, 1920]  # hxw
+    description: "Cadde, sabit kamera"
+    enabled: true
+  
+  MOT17-04:
+    name: "MOT17-04-SDP"
+    fps: 30
+    resolution: [1080, 1920]  # hxw
+    description: "Gece cadde, sabit kamera"
+    enabled: true
