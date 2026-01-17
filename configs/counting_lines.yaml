@@ -4,10 +4,10 @@ MOT17-09:
   line_1:
     name: "Ana Giriş"
     # çizgi koordinatları [x1, y1, x2, y2]
-    coordinates: [400, 500, 1500, 500]
+    coordinates: [1200, 0, 1200, 1080]
     direction:
-      entry: "down"  # yukarıdan aşağı geçiş = giriş
-      exit: "up"     # aşağıdan yukarı geçiş = çıkış
+      entry: "right"  # soldan sağa geçiş = giriş
+      exit: "left"    # sağdan sola geçiş = çıkış
     color: [0, 255, 0]  # BGR
     thickness: 3
     enabled: true
