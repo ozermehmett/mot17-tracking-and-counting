@@ -1,0 +1,14 @@
+# ByteTrack
+
+tracker:
+  type: "bytetrack"
+  
+  track_thresh: 0.5
+  track_buffer: 50  # occlusion sırasında trackin tutulma süresi
+  match_thresh: 0.7
+  
+  low_thresh: 0.1
+  
+  min_box_area: 100
+  
+  with_reid: false

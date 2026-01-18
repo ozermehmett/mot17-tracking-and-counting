@@ -1,0 +1,37 @@
+# giriş/çıkış çizgileri config
+
+MOT17-09:
+  line_1:
+    name: "AVM"
+    # çizgi koordinatları [x1, y1, x2, y2]
+    coordinates: [1200, 0, 1200, 1080]
+    direction:
+      entry: "right"  # soldan sağa geçiş = giriş
+      exit: "left"    # sağdan sola geçiş = çıkış
+    color: [0, 255, 0]  # BGR
+    thickness: 3
+    enabled: true
+
+MOT17-02:
+  line_1:
+    name: "Cadde"
+    # çizgi koordinatları [x1, y1, x2, y2]
+    coordinates: [1300, 0, 1300, 1080]
+    direction:
+      entry: "right"  # soldan sağa
+      exit: "left"    # sağdan sola
+    color: [0, 255, 0]  # BGR
+    thickness: 3
+    enabled: true
+
+MOT17-04:
+  line_1:
+    name: "Gece Cadde"
+    # çizgi koordinatları [x1, y1, x2, y2]
+    coordinates: [0, 840, 1920, 840]
+    direction:
+      entry: "down"   # yukarıdan aşağıya giriş
+      exit: "up"      # aşağıdan yukarıya çıkış
+    color: [0, 255, 0]  # BGR
+    thickness: 3
+    enabled: true

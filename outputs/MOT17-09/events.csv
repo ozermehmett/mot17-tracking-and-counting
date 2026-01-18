@@ -1,0 +1,13 @@
+frame,track_id,event_type,direction
+104,20,entry,right
+138,9,exit,left
+171,8,exit,left
+216,81,entry,right
+236,79,entry,right
+255,98,entry,right
+275,41,entry,right
+283,114,entry,right
+301,116,entry,right
+352,119,exit,left
+448,148,entry,right
+475,165,entry,right
