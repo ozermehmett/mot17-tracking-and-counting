@@ -1,0 +1,21 @@
+{
+  "sequence": "MOT17-04",
+  "detection": {
+    "precision": 0.9755047106325706,
+    "recall": 0.7619688400159795,
+    "f1": 0.8556149732620321,
+    "tp": 36240,
+    "fp": 910,
+    "fn": 11321
+  },
+  "tracking": {
+    "id_switches": 101,
+    "fragmentations": 384
+  },
+  "counting": {
+    "entry": 12,
+    "exit": 8,
+    "total_crossings": 20,
+    "unique_tracks": 4
+  }
+}

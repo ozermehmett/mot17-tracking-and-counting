@@ -34,12 +34,14 @@ class LineCounter:
         self.entry_count = 0
         self.exit_count = 0
         self.crossed_tracks = {}  # track_id: son geçiş yönü
+        self.events = []  # Tüm crossing eventleri
         
-    def update(self, tracks):
+    def update(self, tracks, frame_id=None):
         """Trackleri kontrol et, çizgi geçişini say
         
         Args:
             tracks: [[x1, y1, x2, y2, track_id, conf], ...]
+            frame_id: Mevcut frame numarası (events için)
         """
         current_track_ids = set()
         
@@ -62,12 +64,24 @@ class LineCounter:
                     last_direction = self.crossed_tracks.get(track_id)
                     
                     if direction != last_direction:
-                        # Sayımı yap
+                        event_type = None
                         if direction == self.entry_direction:
                             self.entry_count += 1
+                            event_type = 'entry'
                         elif direction == self.exit_direction:
                             self.exit_count += 1
+                            event_type = 'exit'
                         
+                        self.crossed_tracks[track_id] = direction
+                        
+                        # Event kaydet
+                        if event_type and frame_id is not None:
+                            self.events.append({
+                                'frame': frame_id,
+                                'track_id': track_id,
+                                'event_type': event_type,
+                                'direction': direction
+                            })
                         self.crossed_tracks[track_id] = direction
             
             # Pozisyonu güncelle
@@ -112,6 +126,10 @@ class LineCounter:
             'total_crossings': self.entry_count + self.exit_count,
             'unique_tracks': len(self.crossed_tracks)
         }
+    
+    def get_events(self):
+        """Tüm crossing eventlerini döndür"""
+        return self.events
     
     def get_line_coords(self):
         """Çizgi koordinatlarını döndür (görselleştirme için)"""

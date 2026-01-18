@@ -85,7 +85,7 @@ def main():
             tracking_output.append(f"{frame_idx + 1},{int(track_id)},{x1:.2f},{y1:.2f},{w:.2f},{h:.2f},{conf:.4f},-1,-1,-1")
         
         # counting
-        counter.update(tracks)
+        counter.update(tracks, frame_idx + 1)
         
         # visualization
         frame_vis = frame.copy()
@@ -129,9 +129,18 @@ def main():
     with open(results_path, 'w', encoding='utf-8') as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
     
+    # Events.csv kaydet
+    events = counter.get_events()
+    events_path = os.path.join(output_dir, 'events.csv')
+    with open(events_path, 'w') as f:
+        f.write('frame,track_id,event_type,direction\n')
+        for event in events:
+            f.write(f"{event['frame']},{event['track_id']},{event['event_type']},{event['direction']}\n")
+    
     print("\n" + "="*50)
     print("Results:")
     print("="*50)
+    print(f"Events saved: {events_path}")
     print(f"Entry: {final_counts['entry']}")
     print(f"Exit: {final_counts['exit']}")
     print(f"Total crossings: {final_counts['total_crossings']}")

@@ -67,7 +67,19 @@ outputs/<SEQUENCE>/
 ├── output.mp4           # İşlenmiş video (track ID + çizgi)
 ├── tracking.txt         # MOT format track çıktısı
 ├── results.json         # Giriş/çıkış sayımları
+├── events.csv           # Tüm crossing eventleri
 └── evaluation.json      # Detection/tracking metrikleri
+
+outputs/
+└── results_table.png    # Tüm sequencelerin metrik tablosu
+```
+
+### Örnek events.csv
+```csv
+frame,track_id,event_type,direction
+104,20,entry,right
+138,9,exit,left
+216,81,entry,right
 ```
 
 ## Sonuçlar

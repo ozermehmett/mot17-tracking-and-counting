@@ -1,0 +1,15 @@
+{
+  "sequence": "MOT17-02",
+  "total_frames": 600,
+  "detection_stats": {
+    "total_detections": 4470,
+    "avg_detections_per_frame": 7.45,
+    "avg_confidence": 0.6576063070387915
+  },
+  "counts": {
+    "entry": 5,
+    "exit": 4,
+    "total_crossings": 9,
+    "unique_tracks": 1
+  }
+}

@@ -1,4 +1,7 @@
-outputs/
+# Video dosyaları (büyük)
+outputs/**/*.mp4
+
+# Dataset
 data/
 
 .env
