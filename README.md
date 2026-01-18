@@ -84,11 +84,7 @@ frame,track_id,event_type,direction
 
 ## Sonuçlar
 
-| Sequence  | Precision | Recall | F1    | ID Switches | Fragmentations | Entry | Exit | Total |
-|-----------|-----------|--------|-------|-------------|----------------|-------|------|-------|
-| MOT17-09  | 96.0%     | 65.0%  | 0.775 | 206         | 145            | 9     | 3    | 12    |
-| MOT17-02  | 77.2%     | 48.3%  | 0.594 | 82          | 95             | 5     | 4    | 9     |
-| MOT17-04  | 97.6%     | 76.2%  | 0.856 | 101         | 384            | 12    | 8    | 20    |
+![Results Table](outputs/results_table.png)
 
 ## Demo
 
@@ -124,7 +120,8 @@ frame,track_id,event_type,direction
 ├── requirements.txt
 ├── run.py
 ├── scripts
-│   └── evaluate.py
+│   ├── evaluate.py
+│   └── generate_results_table.py
 ├── src
 │   ├── core
 │   │   ├── counter.py

@@ -52,19 +52,18 @@ def generate_table():
     table.set_fontsize(10)
     table.scale(1, 2)
     
-    # 
+    # başlık
     for i in range(len(headers)):
         table[(0, i)].set_facecolor('#4472C4')
         table[(0, i)].set_text_props(weight='bold', color='white')
     
-    # Row colors
+    # satır
     for i in range(1, len(data) + 1):
         for j in range(len(headers)):
             if i % 2 == 0:
                 table[(i, j)].set_facecolor('#E7E6E6')
     
     plt.savefig('outputs/results_table.png', dpi=300, bbox_inches='tight')
-    print("outputs/results_table.png created")
 
 
 if __name__ == '__main__':
