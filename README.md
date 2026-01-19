@@ -52,6 +52,14 @@ python run.py --sequence MOT17-02
 python run.py --sequence MOT17-04
 ```
 
+## Ayarlar
+
+`configs/` klasöründeki ayarlar:
+- **counting_lines.yaml:** Çizgi konumları
+- **model.yaml:** YOLOv8 parametreleri (conf: 0.35)
+- **tracker.yaml:** ByteTrack parametreleri (buffer: 100)
+- **sequences.yaml:** MOT17 sequence bilgileri
+
 ## Sayma için Çizgi Ayarları
 
 `configs/counting_lines.yaml` içinde tanımlı:
